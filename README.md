@@ -106,8 +106,9 @@ GET /api/history
 
 ## 🤖 AI Verify (Simulated Intelligence)
 
+```
 POST /api/ai-verify
-
+```
 
 ### Description
 
