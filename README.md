@@ -14,7 +14,7 @@ https://intelligent-contract-api.vercel.app/docs
 
 # 📌 Overview
 
-This project implements a **GenLayer-inspired Intelligent Contract system**, demonstrating how smart contracts can be enhanced with off-chain logic and AI-like reasoning and explainable decision making.
+This project implements a **GenLayer-inspired Intelligent Contract system**, demonstrating how smart contracts can be enhanced with off-chain logic and **AI-like reasoning and explainable decision-making processes**.
 
 Users can:
 
@@ -128,7 +128,7 @@ This endpoint simulates AI-based contract evaluation with reasoning and confiden
 }
 ```
 
-```
+---
 
 # 🔄 Flow Diagram
 
