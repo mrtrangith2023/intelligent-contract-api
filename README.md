@@ -10,7 +10,7 @@
 
 # 📌 Overview
 
-This project implements a **GenLayer-inspired Intelligent Contract system**, demonstrating how smart contracts can be enhanced with off-chain logic and AI-like reasoning.
+This project implements a **GenLayer-inspired Intelligent Contract system**, demonstrating how smart contracts can be enhanced with off-chain logic and AI-like reasoning and explainable decision making.
 
 Users can:
 
@@ -28,7 +28,7 @@ GenLayer introduces **Intelligent Contracts** — an evolution of traditional sm
 
 * Perform off-chain reasoning
 * Handle flexible and dynamic logic
-* Simulate AI-powered decision making
+* Simulate AI-powered reasoning and decision making
 
 ---
 
@@ -72,6 +72,23 @@ POST /api/submit
 POST /api/verify?submission_id=0
 ```
 
+### Example Response
+
+```json
+{
+  "status": "approved",
+  "reason": "Action 'mint' is allowed by system rules",
+  "submission": {
+  "user": "Alice",
+  "action": "mint",
+  "data": {
+    "amount": 100
+  },
+  "timestamp": "2026-01-01T00:00:00"
+    }
+}
+```
+
 ### Logic
 
 * Supported actions: `mint`, `transfer`
@@ -83,6 +100,26 @@ POST /api/verify?submission_id=0
 
 ```
 GET /api/history
+```
+
+---
+
+## 🤖 AI Verify (Simulated Intelligence)
+
+POST /api/ai-verify
+
+### Description
+
+This endpoint simulates AI-based contract evaluation with reasoning and confidence score.
+
+### Example Response
+
+```json
+{
+  "status": "approved",
+  "reason": "AI decision: high-value mint is acceptable",
+  "confidence": 0.92
+}
 ```
 
 ---
