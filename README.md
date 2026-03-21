@@ -137,21 +137,35 @@ intelligent-contract-api/
 
 # 📸 Screenshots
 
-> ⚠️ Required for high score
+> ⚠️ These screenshots demonstrate the full workflow of the Intelligent Contract system
 
-### Swagger UI
+---
+
+## 🧪 Swagger API
 
 ![swagger](./screenshots/swagger.png)
 
-### Submit API
+---
+
+## 📥 Submit Contract
 
 ![submit](./screenshots/submit.png)
 
-### Verify Result
+---
+
+## 🔍 Verify Contract
 
 ![verify](./screenshots/verify.png)
 
-### Frontend UI
+---
+
+## 🤖 AI Verify (GenLayer-style)
+
+![ai](./screenshots/ai.png)
+
+---
+
+## 🌐 Frontend Demo
 
 ![frontend](./screenshots/frontend.png)
 
