@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import BASE_URL from "../config";
 
 export default function ContractHistory() {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/history")
-      .then(res => setHistory(res.data));
+    fetch(`${BASE_URL}/api/history`)
+      .then(res => res.json())
+      .then(data => setHistory(data))
+      .catch(err => console.error("History error:", err));
   }, []);
 
   return (

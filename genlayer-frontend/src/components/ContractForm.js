@@ -1,23 +1,31 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import BASE_URL from "../config";
 
 export default function ContractForm() {
-  const [result, setResult] = useState(null);
+  const submitContract = async () => {
+    try {
+      const res = await fetch(`${BASE_URL}/api/submit`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          content: "This is a test contract"
+        })
+      });
 
-  const handleSubmit = async () => {
-    const res = await axios.post("http://127.0.0.1:8000/api/submit", {
-      user: "TAM",
-      action: "mint",
-      data: { amount: 100 }
-    });
-    setResult(res.data);
+      const data = await res.json();
+      alert("Submitted: " + data.contract_id);
+
+    } catch (err) {
+      console.error("Submit error:", err);
+    }
   };
 
   return (
     <div>
       <h2>Submit Contract</h2>
-      <button onClick={handleSubmit}>Submit</button>
-      {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
+      <button onClick={submitContract}>Submit Contract</button>
     </div>
   );
 }

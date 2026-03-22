@@ -1,19 +1,39 @@
 import React, { useState } from "react";
-import axios from "axios";
+import BASE_URL from "../config";
 
 export default function ContractVerify() {
-  const [result, setResult] = useState(null);
+  const [contractId, setContractId] = useState("");
 
-  const handleVerify = async () => {
-    const res = await axios.post("http://127.0.0.1:8000/api/verify?submission_id=0");
-    setResult(res.data);
+  const verifyContract = async () => {
+    try {
+      const res = await fetch(`${BASE_URL}/api/verify`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          contract_id: contractId
+        })
+      });
+
+      const data = await res.json();
+      alert("Result: " + data.result);
+
+    } catch (err) {
+      console.error("Verify error:", err);
+    }
   };
 
   return (
     <div>
       <h2>Verify Contract</h2>
-      <button onClick={handleVerify}>Verify ID 0</button>
-      {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
+      <input
+        type="text"
+        placeholder="Enter Contract ID"
+        value={contractId}
+        onChange={(e) => setContractId(e.target.value)}
+      />
+      <button onClick={verifyContract}>Verify</button>
     </div>
   );
 }
