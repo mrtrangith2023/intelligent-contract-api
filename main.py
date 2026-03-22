@@ -7,7 +7,11 @@ app = FastAPI(title="Intelligent Contract API")
 # 2️⃣ CORS để frontend IP khác gọi API được
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # hoặc ["http://192.168.56.1:3000"]
+    allow_origins=[
+        "http://localhost:3000",
+        "https://intelligent-contract-api.vercel.app"
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
